@@ -1,6 +1,6 @@
 import scrapy
 
-class texas_spidy(scrapy.spider):
+class texas_spidy(scrapy.Spider):
     name = 'texas-spidy'
     start_urls  = [
     "https://gradschool.utexas.edu/degrees-programs",  # University of Texas at Austin
