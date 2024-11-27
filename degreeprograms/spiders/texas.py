@@ -2,7 +2,7 @@ import scrapy
 
 class texas_spidy(scrapy.Spider):
     name = 'texas-spidy'
-    start_urls  = [ 'https://gradschool.utexas.edu/degrees-programs']
+    start_urls  = [ 'https://www.mastersportal.com/search/master?kw-where=texas']
     def parse(self, response):
         for program in response.css('div.program'):
             yield {
