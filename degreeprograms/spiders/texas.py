@@ -2,19 +2,7 @@ import scrapy
 
 class texas_spidy(scrapy.Spider):
     name = 'texas-spidy'
-    start_urls  = [
-    "https://gradschool.utexas.edu/degrees-programs",  # University of Texas at Austin
-    "https://www.gradcollege.txstate.edu/programs.html",  # Texas State University
-    "https://www.depts.ttu.edu/gradschool/",  # Texas Tech University
-    "https://grad.tamu.edu/",  # Texas A&M University
-    "https://www.baylor.edu/graduate/",  # Baylor University
-    "https://www.uta.edu/academics/schools-colleges/graduate-school",  # University of Texas at Arlington
-    "https://www.unthsc.edu/academics/",  # University of North Texas Health Science Center
-    "https://www.ttuhsc.edu/biomedical-sciences/default.aspx",  # Texas Tech University Health Sciences Center
-    "https://www.ischool.utexas.edu/programs/",  # University of Texas at Austin School of Information
-    "https://www.gradcollege.txstate.edu/",  # Texas State University Graduate College
-    "https://www.gradschools.com/graduate-schools-in-united-states/texas"  # General resource for graduate schools in Texas
-    ]
+    start_urls  = [ 'https://gradschool.utexas.edu/degrees-programs']
     def parse(self, response):
         for program in response.css('div.program'):
             yield {
