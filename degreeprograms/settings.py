@@ -7,11 +7,25 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "degreeprograms"
+BOT_NAME = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+DOWNLOAD_DELAY = 2
+REDIRECT_ENABLED = True
+
+AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_START_DELAY = 1
+AUTOTHROTTLE_MAX_DELAY = 10
 
 SPIDER_MODULES = ["degreeprograms.spiders"]
 NEWSPIDER_MODULE = "degreeprograms.spiders"
 
+FEEDS = {
+        'output.json': {
+            'format': 'json',
+            'encoding': 'utf8',
+            'store_empty': False,
+            'indent': 4,
+        }
+    }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "degreeprograms (+http://www.yourdomain.com)"
